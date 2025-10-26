@@ -1,19 +1,27 @@
 import { ArrowRight, MapPin } from "lucide-react";
+import Spline from "@splinetool/react-spline";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative">
-      <div className="absolute inset-0 -z-0 bg-gradient-to-b from-indigo-50 via-white to-white" />
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-16 pb-20">
+    <section id="home" className="relative min-h-[70vh] flex items-center">
+      {/* Spline background */}
+      <div className="absolute inset-0">
+        <Spline scene="https://prod.spline.design/vc19ejtcC5VJjy5v/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+      </div>
+
+      {/* Gradient overlay for readability, non-interactive */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60 dark:from-black/60 dark:via-black/50 dark:to-black/70" />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 py-24">
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7">
-            <span className="inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white">
               Open to opportunities
             </span>
-            <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900">
+            <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
               Hi, I’m Sagar — a full‑stack developer crafting clean, fast experiences.
             </h1>
-            <p className="mt-5 text-lg text-gray-600 leading-relaxed">
+            <p className="mt-5 text-lg text-gray-200 leading-relaxed">
               I build modern web apps with React on the front and Python/Node on the back. I care about performance,
               accessibility, and thoughtful UI that solves real problems.
             </p>
@@ -22,28 +30,28 @@ const Hero = () => {
                 href="https://www.linkedin.com/in/sagar-chopda"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-md bg-indigo-600 px-4 py-2 text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="inline-flex items-center gap-2 rounded-md bg-yellow-400 px-4 py-2 text-black shadow hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-300"
               >
                 Connect on LinkedIn <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-gray-900 border border-gray-200 shadow-sm hover:border-gray-300"
+                className="inline-flex items-center gap-2 rounded-md bg-white/10 px-4 py-2 text-white border border-white/20 shadow-sm hover:bg-white/15"
               >
                 View Projects
               </a>
             </div>
-            <div className="mt-6 flex items-center gap-2 text-sm text-gray-500">
+            <div className="mt-6 flex items-center gap-2 text-sm text-gray-200">
               <MapPin className="h-4 w-4" />
               <span>Remote • Open to relocation</span>
             </div>
           </div>
           <div className="lg:col-span-5">
-            <div className="relative aspect-square rounded-2xl border border-gray-200 bg-gradient-to-br from-indigo-100 via-white to-white p-4">
-              <div className="absolute inset-4 rounded-xl bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.15),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(16,185,129,0.12),transparent_40%)]" />
+            <div className="relative aspect-square rounded-2xl border border-white/10 bg-white/5 p-4 shadow-2xl">
+              <div className="absolute inset-4 rounded-xl bg-[radial-gradient(circle_at_30%_20%,rgba(250,204,21,0.18),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(99,102,241,0.18),transparent_40%)]" />
               <div className="relative z-10 h-full w-full flex items-center justify-center">
                 <div className="text-center">
-                  <p className="text-sm uppercase tracking-widest text-gray-500">Tech stack</p>
+                  <p className="text-sm uppercase tracking-widest text-gray-200">Tech stack</p>
                   <div className="mt-3 flex flex-wrap justify-center gap-2">
                     {[
                       "React",
@@ -54,7 +62,7 @@ const Hero = () => {
                       "Tailwind",
                       "MongoDB",
                     ].map((t) => (
-                      <span key={t} className="rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-700">
+                      <span key={t} className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-white">
                         {t}
                       </span>
                     ))}

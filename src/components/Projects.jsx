@@ -25,9 +25,9 @@ const projects = [
 ];
 
 const ProjectCard = ({ title, description, tags, link }) => (
-  <div className="group relative rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+  <div className="group relative rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.03] p-5 shadow-sm hover:shadow-md transition-shadow">
     <div className="flex items-start justify-between">
-      <div className="flex items-center gap-2 text-indigo-600">
+      <div className="flex items-center gap-2 text-indigo-600 dark:text-yellow-400">
         <Folder className="h-5 w-5" />
         <Code className="h-4 w-4" />
       </div>
@@ -35,19 +35,19 @@ const ProjectCard = ({ title, description, tags, link }) => (
         href={link}
         target={link?.startsWith("http") ? "_blank" : undefined}
         rel={link?.startsWith("http") ? "noreferrer" : undefined}
-        className="text-gray-500 hover:text-gray-900"
+        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
         aria-label={`Open ${title}`}
       >
         <ExternalLink className="h-5 w-5" />
       </a>
     </div>
-    <h3 className="mt-3 text-lg font-semibold text-gray-900">{title}</h3>
-    <p className="mt-2 text-sm text-gray-600 leading-relaxed">{description}</p>
+    <h3 className="mt-3 text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
+    <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{description}</p>
     <div className="mt-4 flex flex-wrap gap-2">
       {tags.map((tag) => (
         <span
           key={tag}
-          className="rounded-full bg-gray-100 text-gray-700 border border-gray-200 px-2.5 py-1 text-xs"
+          className="rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-white/10 px-2.5 py-1 text-xs"
         >
           {tag}
         </span>
@@ -61,8 +61,8 @@ const Projects = () => {
     <section id="projects" className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
       <div className="flex items-end justify-between gap-4">
         <div>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Featured Projects</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Featured Projects</h2>
+          <p className="mt-2 text-gray-600 dark:text-gray-300">
             A selection of real-world builds. More available on request.
           </p>
         </div>
@@ -70,7 +70,7 @@ const Projects = () => {
           href="https://www.linkedin.com/in/sagar-chopda"
           target="_blank"
           rel="noreferrer"
-          className="hidden sm:inline-flex items-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 hover:border-gray-300"
+          className="hidden sm:inline-flex items-center gap-2 rounded-md border border-gray-200 dark:border-white/10 bg-white dark:bg-white/10 px-3 py-2 text-sm text-gray-900 dark:text-white hover:border-gray-300 dark:hover:border-white/20"
         >
           View more on LinkedIn <ExternalLink className="h-4 w-4" />
         </a>
